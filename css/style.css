@@ -22,14 +22,15 @@ h1 {
 }
 
 .collapsible-content {
-    max-height: 0;
+    max-height: 0; /* Caché par défaut */
     overflow: hidden;
     transition: max-height 0.3s ease-out;
     background-color: #f9f9f9;
-    padding: 0 10px;
+    padding: 0 10px; /* Ajuste le rembourrage à gauche et à droite */
 }
 
-    .collapsible-content p, .collapsible-content ul {
-        padding: 10px 0;
-        margin: 0;
+    .collapsible-content p,
+    .collapsible-content ul {
+        padding: 10px 0; /* Rembourrage pour les paragraphes et listes */
+        margin: 0; /* Enlève la marge */
     }

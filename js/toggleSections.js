@@ -1,19 +1,17 @@
 <script>
     document.addEventListener("DOMContentLoaded", function() {
-    const headers = document.querySelectorAll('.collapsible');
+    const headers = document.querySelectorAll('.collapsible-header');
     
     headers.forEach(header => {
         header.addEventListener('click', function () {
             const content = this.nextElementSibling; // La div suivante
             if (content) {
                 // Vérifie si le contenu est caché ou non
-                if (content.style.display === "none" || content.style.display === "") {
-                    content.style.display = "block"; // Affiche le contenu
+                if (content.style.maxHeight) {
+                    content.style.maxHeight = null; // Cache le contenu
                 } else {
-                    content.style.display = "none"; // Cache le contenu
+                    content.style.maxHeight = content.scrollHeight + "px"; // Affiche le contenu
                 }
-            } else {
-                console.error("Le contenu correspondant n'a pas été trouvé.");
             }
         });
     });
