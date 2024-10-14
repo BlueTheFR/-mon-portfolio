@@ -4,12 +4,10 @@ document.addEventListener("DOMContentLoaded", function () {
     headers.forEach(header => {
         header.addEventListener("click", function () {
             const content = this.nextElementSibling;
-            if (content.style.display === "none" || content.style.display === "") {
-                content.style.display = "block";
-                content.style.maxHeight = content.scrollHeight + "px"; // Effet coulissant
+            if (content.style.maxHeight) {
+                content.style.maxHeight = null; // Ferme la section
             } else {
-                content.style.display = "none";
-                content.style.maxHeight = "0"; // Effet coulissant de fermeture
+                content.style.maxHeight = content.scrollHeight + "px"; // Ouvre la section
             }
         });
     });
