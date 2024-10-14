@@ -1,18 +1,18 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const sections = document.querySelectorAll("section");
+    const sections = document.querySelectorAll(".collapsible-section");
 
     sections.forEach(section => {
-        const link = document.querySelector(`[href="#${section.id}"]`);
+        const header = section.querySelector(".collapsible-header");
 
-        if (link) {
-            link.addEventListener("click", function (e) {
-                e.preventDefault();
-                if (section.style.display === "none") {
-                    section.style.display = "block";
-                } else {
-                    section.style.display = "none";
-                }
-            });
-        }
+        header.addEventListener("click", function () {
+            const content = section.querySelector(".collapsible-content");
+            if (content.style.display === "none" || content.style.display === "") {
+                content.style.display = "block";
+                content.style.maxHeight = content.scrollHeight + "px"; // Coulisser l'ouverture
+            } else {
+                content.style.display = "none";
+                content.style.maxHeight = "0"; // Coulisser la fermeture
+            }
+        });
     });
 });
