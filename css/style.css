@@ -1,3 +1,7 @@
+.center-text {
+    text-align: center !important; /* Force le centrage */
+}
+
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
