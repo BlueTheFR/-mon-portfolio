@@ -11,26 +11,19 @@ h1 {
     color: purple;
 }
 
-.collapsible {
+.main-collapsible, .sub-collapsible {
     cursor: pointer;
     font-weight: bold;
-    color: purple;
+    color: black;
     padding: 10px 0;
     text-align: center;
     border-bottom: 1px solid #ccc;
     background-color: #f1f1f1;
+    margin-top: 10px;
 }
 
-.collapsible-content {
-    max-height: 0; /* Caché par défaut */
-    overflow: hidden;
-    transition: max-height 0.3s ease-out;
+.main-collapsible-content, .sub-collapsible-content {
+    display: none; /* Masque par défaut */
     background-color: #f9f9f9;
-    padding: 0 10px; /* Ajuste le rembourrage à gauche et à droite */
+    padding: 10px;
 }
-
-    .collapsible-content p,
-    .collapsible-content ul {
-        padding: 10px 0; /* Rembourrage pour les paragraphes et listes */
-        margin: 0; /* Enlève la marge */
-    }
