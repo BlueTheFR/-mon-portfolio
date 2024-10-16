@@ -1,30 +1,28 @@
-document.addEventListener("DOMContentLoaded", function () {
-    // Gestion des sections principales
-    const mainHeaders = document.querySelectorAll('.main-collapsible');
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
     const subHeaders = document.querySelectorAll('.sub-collapsible');
 
-    // Fonction pour basculer l'affichage des sections
-    function toggleVisibility(header, content) {
-        if (content.style.display === "block") {
-            content.style.display = "none";  // Cache le contenu
-        } else {
-            content.style.display = "block";  // Affiche le contenu
-        }
-    }
-
-    // Application pour les sections principales
-    mainHeaders.forEach(header => {
-        header.addEventListener('click', function () {
-            const content = this.nextElementSibling;
-            toggleVisibility(this, content);
-        });
-    });
-
-    // Application pour les sous-sections
     subHeaders.forEach(header => {
         header.addEventListener('click', function () {
             const content = this.nextElementSibling;
-            toggleVisibility(this, content);
+
+            // Ferme toutes les autres sections avant d'ouvrir celle-ci
+            document.querySelectorAll('.sub-collapsible-content').forEach(item => {
+                if (item !== content) {
+                    item.classList.remove('active');
+                    item.style.display = "none"; // Cache le contenu
+                }
+            });
+
+            // Toggle l'affichage de la section actuelle
+            if (content.classList.contains('active')) {
+                content.classList.remove('active');
+                content.style.display = "none"; // Cache le contenu
+            } else {
+                content.classList.add('active');
+                content.style.display = "block"; // Affiche le contenu
+            }
         });
     });
 });
+</script>
