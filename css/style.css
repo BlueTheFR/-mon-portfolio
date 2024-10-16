@@ -2,6 +2,7 @@ body {
     font-family: Arial, sans-serif; /* Police de caractère */
     margin: 0;
     padding: 20px; /* Espacement autour du contenu */
+    background-color: #f4f4f4; /* Couleur de fond de la page */
 }
 
 .page-container {
@@ -30,6 +31,12 @@ h2 {
     line-height: 1.5; /* Augmente l'espacement entre les lignes */
 }
 
+/* Nouveau style pour centrer le texte */
+.center-text {
+    text-align: center; /* Centre le texte */
+    margin: 10px 0; /* Espace autour de la section */
+}
+
 /* Style des sections collapsibles */
 .main-collapsible, .sub-collapsible {
     cursor: pointer; /* Change le curseur au survol */
@@ -38,6 +45,8 @@ h2 {
     text-align: center; /* Centre le texte */
     border: none; /* Supprime la bordure par défaut */
     margin-top: 10px; /* Espace entre les sections */
+    background-color: #e7f3ff; /* Couleur de fond pour les titres */
+    color: #333; /* Couleur du texte */
     transition: background-color 0.3s ease; /* Transition pour le changement de couleur */
 }
 
@@ -46,6 +55,8 @@ h2 {
     overflow: hidden; /* Cache le contenu */
     transition: max-height 0.3s ease-out, opacity 0.5s ease-out; /* Animation fluide */
     padding: 0 10px; /* Espacement à gauche et à droite */
+    background-color: #ffffff; /* Couleur de fond du contenu */
+    color: #333; /* Couleur du texte du contenu */
 }
 
 /* Ajout de styles pour les listes */
